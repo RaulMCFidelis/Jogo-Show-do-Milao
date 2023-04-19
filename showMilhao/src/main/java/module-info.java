@@ -1,5 +1,5 @@
 module showMilhao {
-	exports application;
+	exports br.com.showmilhao.application;
 	
 	requires transitive javafx.controls;
 }
