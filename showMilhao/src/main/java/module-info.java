@@ -4,4 +4,5 @@ module showMilhao {
 	requires transitive javafx.controls;
 	requires log4j;
 	requires jlayer;
+	requires java.sql;
 }
