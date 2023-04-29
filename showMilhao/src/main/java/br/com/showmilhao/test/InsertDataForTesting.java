@@ -11,11 +11,15 @@ public class InsertDataForTesting {
 		/*Jogador jogador = new Jogador("Ana Paula", 800);
 		System.out.println(jogadorDAO.adicionar(jogador));*/
 		
-		Jogador jogador = new Jogador();
+		/*Jogador jogador = new Jogador();
 		jogador.setId(1);
 		jogador.setNome("Raul Maximiliano");
 		jogador.setPontuacao(1000);		
-		jogadorDAO.atualizar(jogador);
+		jogadorDAO.atualizar(jogador);*/
+		
+		//jogadorDAO.listar().forEach(System.out::println);
+		
+		jogadorDAO.listarRanking().forEach(System.out::println);
 	}
 
 }
