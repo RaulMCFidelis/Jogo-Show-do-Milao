@@ -18,8 +18,9 @@ public class InsertDataForTesting {
 		jogadorDAO.atualizar(jogador);*/
 		
 		//jogadorDAO.listar().forEach(System.out::println);
+		//jogadorDAO.listarRanking().forEach(System.out::println);
 		
-		jogadorDAO.listarRanking().forEach(System.out::println);
+		jogadorDAO.zerarRanking();
 	}
 
 }
