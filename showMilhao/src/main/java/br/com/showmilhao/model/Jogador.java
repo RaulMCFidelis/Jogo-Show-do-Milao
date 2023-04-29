@@ -13,6 +13,11 @@ public class Jogador {
 		linha = 0;
 		pontuacao = 0;
 	}
+	
+	public Jogador(String nome, Integer pontuacao) {
+		this.nome = nome;
+		this.pontuacao = pontuacao;
+	}
 
 	public Integer getId() {
 		return id;
