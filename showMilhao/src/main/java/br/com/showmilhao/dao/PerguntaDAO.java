@@ -14,14 +14,17 @@ public class PerguntaDAO {
 	
 	private Connection connection;
 	
+	private static final String QUERY_INSERT ="INSERT INTO perguntas (id, nivel, enunciado, alternativa1, alternativa2, alternativa3, resposta) VALUES($next_id, ?, ?, ?, ?, ?, ?)";
+	private static final String OK = "Processo Concluído!"; 
+	private static final int MESSAGE_TYPE = JOptionPane.INFORMATION_MESSAGE;
+	
 	public PerguntaDAO() {
 		connection = ConnectionFactory.getConnection();
 	}
 	
 	public void adicionar(Pergunta pergunta) {
 		try {
-			String sql = "INSERT INTO perguntas (id, nivel, enunciado, alternativa1, alternativa2, alternativa3, resposta) VALUES($next_id, ?, ?, ?, ?, ?, ?)";
-			try(PreparedStatement stmt = connection.prepareStatement(sql)) {
+			try(PreparedStatement stmt = connection.prepareStatement(QUERY_INSERT)) {
 				stmt.setString(2, pergunta.getNivel());
 				stmt.setString(3, pergunta.getEnunciado());
 				stmt.setString(4, pergunta.getAlternativa1());
@@ -31,7 +34,7 @@ public class PerguntaDAO {
 				stmt.executeUpdate();
 				connection.commit();	
 			}
-			JOptionPane.showMessageDialog(new JFrame(), "Pergunta adicionada com sucesso!", "Processo Concluído!", JOptionPane.INFORMATION_MESSAGE);
+			JOptionPane.showMessageDialog(new JFrame(), "Pergunta adicionada com sucesso!", OK, MESSAGE_TYPE);
 		} catch (Exception e) {
 			LogUtil.getLogger(PerguntaDAO.class).error(e.getCause().toString());
 		}

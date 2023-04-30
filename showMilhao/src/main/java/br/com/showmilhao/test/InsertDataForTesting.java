@@ -1,26 +1,25 @@
 package br.com.showmilhao.test;
 
-import br.com.showmilhao.dao.JogadorDAO;
-import br.com.showmilhao.model.Jogador;
+import br.com.showmilhao.dao.PerguntaDAO;
+import br.com.showmilhao.model.Pergunta;
 
 public class InsertDataForTesting {
 	
-	private static JogadorDAO jogadorDAO = new JogadorDAO();
+	private static PerguntaDAO perguntaDAO = new PerguntaDAO();
 	
 	public static void main(String[] args) {
-		/*Jogador jogador = new Jogador("Ana Paula", 800);
-		System.out.println(jogadorDAO.adicionar(jogador));*/
 		
-		/*Jogador jogador = new Jogador();
-		jogador.setId(1);
-		jogador.setNome("Raul Maximiliano");
-		jogador.setPontuacao(1000);		
-		jogadorDAO.atualizar(jogador);*/
+		Pergunta pergunta = new Pergunta();
+		pergunta.setNivel("facil");
+		pergunta.setEnunciado("Qual a cor do cavalo branco de Napoleão?");
+		pergunta.setAlternativa1("Preto");
+		pergunta.setAlternativa2("Vermelho");
+		pergunta.setAlternativa3("Amarelo");
+		pergunta.setResposta("branca");
 		
-		//jogadorDAO.listar().forEach(System.out::println);
-		//jogadorDAO.listarRanking().forEach(System.out::println);
+		perguntaDAO.adicionar(pergunta);;
 		
-		jogadorDAO.zerarRanking();
+		
 	}
 
 }
